@@ -86,32 +86,32 @@
                 <!--tools:layout_editor_absoluteX="168dp"-->
                 <!--tools:layout_editor_absoluteY="267dp" />-->
 
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="376dp"
-                    android:onClick="buddy"
-                    android:text="Run"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.534"
-                    app:layout_constraintStart_toStartOf="parent" />
+                <!--<Button-->
+                    <!--android:id="@+id/button3"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="8dp"-->
+                    <!--android:layout_marginEnd="8dp"-->
+                    <!--android:layout_marginBottom="376dp"-->
+                    <!--android:onClick="buddy"-->
+                    <!--android:text="Run"-->
+                    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintHorizontal_bias="0.534"-->
+                    <!--app:layout_constraintStart_toStartOf="parent" />-->
 
-                <Switch
-                    android:id="@+id/userSwitch"
-                    android:layout_width="66dp"
-                    android:layout_height="35dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/userDisplay"
-                    app:layout_constraintHorizontal_bias="0.531"
-                    app:layout_constraintStart_toStartOf="@+id/userDisplay"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.338" />
+                <!--<Switch-->
+                    <!--android:id="@+id/userSwitch"-->
+                    <!--android:layout_width="66dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:layout_marginBottom="8dp"-->
+                    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--app:layout_constraintEnd_toEndOf="@+id/userDisplay"-->
+                    <!--app:layout_constraintHorizontal_bias="0.531"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/userDisplay"-->
+                    <!--app:layout_constraintTop_toTopOf="parent"-->
+                    <!--app:layout_constraintVertical_bias="0.338" />-->
 
                 <TextView
                     android:id="@+id/uploadPic"
@@ -127,31 +127,31 @@
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="19dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="256dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Buddy"
-                    app:layout_constraintEnd_toStartOf="@+id/userSwitch"
-                    app:layout_constraintHorizontal_bias="0.828"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <!--<TextView-->
+                    <!--android:id="@+id/textView6"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="19dp"-->
+                    <!--android:layout_marginStart="8dp"-->
+                    <!--android:layout_marginTop="256dp"-->
+                    <!--android:layout_marginEnd="8dp"-->
+                    <!--android:text="Buddy"-->
+                    <!--app:layout_constraintEnd_toStartOf="@+id/userSwitch"-->
+                    <!--app:layout_constraintHorizontal_bias="0.828"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:layout_constraintTop_toTopOf="parent" />-->
 
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="37dp"
-                    android:layout_height="17dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="256dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Host"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.339"
-                    app:layout_constraintStart_toEndOf="@+id/userSwitch"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <!--<TextView-->
+                    <!--android:id="@+id/textView7"-->
+                    <!--android:layout_width="37dp"-->
+                    <!--android:layout_height="17dp"-->
+                    <!--android:layout_marginStart="8dp"-->
+                    <!--android:layout_marginTop="256dp"-->
+                    <!--android:layout_marginEnd="8dp"-->
+                    <!--android:text="Host"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintHorizontal_bias="0.339"-->
+                    <!--app:layout_constraintStart_toEndOf="@+id/userSwitch"-->
+                    <!--app:layout_constraintTop_toTopOf="parent" />-->
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>

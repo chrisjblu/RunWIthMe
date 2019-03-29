@@ -140,7 +140,7 @@ public class BuddyActivity extends FragmentActivity implements OnMapReadyCallbac
 
         mMap.clear();
         LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 14));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 20));
         mMap.addMarker(new MarkerOptions().position(userLocation).title("Your Location"));
 
     }
@@ -187,10 +187,6 @@ public class BuddyActivity extends FragmentActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 

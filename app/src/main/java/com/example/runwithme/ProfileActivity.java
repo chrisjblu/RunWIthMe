@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,6 +23,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.runwithme.Utils.BottomNavigationViewHelper;
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -34,50 +38,54 @@ import static com.parse.Parse.getApplicationContext;
 import android.os.Bundle;
 
 public class ProfileActivity extends AppCompatActivity {
+    private static final String TAG = "ProfileActivity";
 
     Button logout;
     Button changeBtn;
 
-//    public void buddy(View view){
+
+    private static final int ACTIVITY_NUM = 4;
 //
-//        Intent intent = new Intent(getApplicationContext(), BuddyActivity.class);
-//        startActivity(intent); }
-
-    public void redirect(){
-        if(ParseUser.getCurrentUser().get("buddyOrhost").equals("buddy")){
-
-            Intent intent = new Intent(getApplicationContext(), BuddyActivity.class);
-            startActivity(intent);
-        }
-
-    }
-
-    public void buddy(View view) {
-
-
-        Switch userswitch = (Switch) findViewById(R.id.userSwitch);
-        String userType = "buddy";
-
-        if (userswitch.isChecked()) {
-            userType = "host";
-
-
-        }
-
-        ParseUser.getCurrentUser().put("buddyOrhost", userType);
-
-        ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                redirect();
-
-            }
-        });
-
-        Toast.makeText(ProfileActivity.this, "You are Currently Running as "+userType.toString(),Toast.LENGTH_SHORT).show();
-
-
-    }
+////    public void buddy(View view){
+////
+////        Intent intent = new Intent(getApplicationContext(), BuddyActivity.class);
+////        startActivity(intent); }
+//
+//    public void redirect(){
+//        if(ParseUser.getCurrentUser().get("buddyOrhost").equals("buddy")){
+//
+//            Intent intent = new Intent(getApplicationContext(), BuddyActivity.class);
+//            startActivity(intent);
+//        }
+//
+//    }
+//
+//    public void buddy(View view) {
+//
+//
+//        Switch userswitch = (Switch) findViewById(R.id.userSwitch);
+//        String userType = "buddy";
+//
+//        if (userswitch.isChecked()) {
+//            userType = "host";
+//
+//
+//        }
+//
+//        ParseUser.getCurrentUser().put("buddyOrhost", userType);
+//
+//        ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
+//            @Override
+//            public void done(ParseException e) {
+//                redirect();
+//
+//            }
+//        });
+//
+//        Toast.makeText(ProfileActivity.this, "You are Currently Running as "+userType.toString(),Toast.LENGTH_SHORT).show();
+//
+//
+//    }
 
 
 
@@ -195,5 +203,18 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
+
+        setupBottomNavigationView();
     }
+    ///bottom navigation view setup
+    private void setupBottomNavigationView(){
+        Log.d(TAG, "setupBottomNavigationView: setting up bottom navigationView");
+        BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx) findViewById(R.id.bottomNavViewBar);
+        BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx);
+        BottomNavigationViewHelper.enableNavigation(ProfileActivity.this, bottomNavigationViewEx);
+        Menu menu = bottomNavigationViewEx.getMenu();
+        MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
+        menuItem.setChecked(true);
+    }
+
 }
