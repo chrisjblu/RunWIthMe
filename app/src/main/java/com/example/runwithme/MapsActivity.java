@@ -36,6 +36,11 @@ public class MapsActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), BuddyActivity.class);
             startActivity(intent);
         }
+        else{
+            Intent intent = new Intent(getApplicationContext(), HostActivity.class);
+            startActivity(intent);
+
+        }
 
     }
 

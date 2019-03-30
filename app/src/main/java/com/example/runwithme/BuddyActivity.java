@@ -2,6 +2,7 @@ package com.example.runwithme;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -51,6 +52,89 @@ public class BuddyActivity extends FragmentActivity implements OnMapReadyCallbac
     LocationManager locationManager;
     LocationListener locationListener;
 
+    Button SearchingHost;
+
+    Boolean requestActive = false;
+
+//    public void optionsBtn(View view){
+//
+//            ParseUser.logOut();
+//            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+//            startActivity(intent);
+//
+//    }
+
+    public void searchHost(View view){
+
+
+        if(requestActive){
+
+            ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Request");
+
+            query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> objects, ParseException e) {
+
+                    if(e == null){
+
+
+                        if(objects.size() > 0){
+                            for(ParseObject object : objects){
+
+                                object.deleteInBackground();
+                            }
+                            requestActive =false;
+                            SearchingHost.setText("Search for Host");
+
+                        }
+                    }
+                }
+            });
+
+
+
+        }else {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+                Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+                if (lastKnownLocation != null) {
+                    final ParseObject request = new ParseObject("Request");
+
+                    request.put("username", ParseUser.getCurrentUser().getUsername());
+
+                    ParseGeoPoint parseGeoPoint = new ParseGeoPoint(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
+
+                    request.put("Location", parseGeoPoint);
+
+                    request.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+
+                            if (e == null) {
+                                SearchingHost.setText("Cancel Search");
+                                requestActive = true;
+
+                            }
+                        }
+                    });
+                } else {
+
+                    Toast.makeText(this, "Could not find a location, Please Try again later", Toast.LENGTH_SHORT).show();
+
+
+                }
+
+            }
+        }
+
+
+
+
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -86,6 +170,27 @@ public class BuddyActivity extends FragmentActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        SearchingHost = (Button) findViewById(R.id.SearchingHost);
+
+        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Request");
+
+        query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if(e == null){
+
+                    if(objects.size() > 0){
+                        requestActive =true;
+                        SearchingHost.setText("Cancel Search");
+
+                    }
+                }
+            }
+        });
 
 
     }
