@@ -7,12 +7,15 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -34,9 +37,12 @@ public class HostActivity extends AppCompatActivity {
     LocationManager locationManager;
     LocationListener locationListener;
 
+    ArrayList<Double> requestLatitudes = new ArrayList<Double>();
+    ArrayList<Double> requestLongitudes = new ArrayList<Double>();
+
     public void updateListView(Location location){
             if(location != null) {
-                requests.clear();
+
 
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("Request");
 
@@ -50,16 +56,25 @@ public class HostActivity extends AppCompatActivity {
                     @Override
                     public void done(List<ParseObject> objects, ParseException e) {
                         if(e == null){
-
+                            requests.clear();
+                            requestLongitudes.clear();
+                            requestLatitudes.clear();
                             if(objects.size() > 0){
 
                                 for(ParseObject object : objects){
 
-                                    Double distanceMiles = geoPointLocation.distanceInMilesTo((ParseGeoPoint) object.get("Location"));
 
-                                    Double distanceOneDecimal = (double) Math.round(distanceMiles * 10) / 10;
+                                    ParseGeoPoint requestLocation = (ParseGeoPoint) object.get(("Location"));
 
-                                    requests.add(distanceOneDecimal.toString() + "miles");
+                                    Double distanceKM = geoPointLocation.distanceInKilometersTo(requestLocation);
+                                    if(requestLocation != null) {
+                                        Double distanceOneDecimal = (double) Math.round(distanceKM * 10) / 10;
+
+                                        requests.add(distanceOneDecimal.toString() + "Km");
+
+                                        requestLatitudes.add(requestLocation.getLatitude());
+                                        requestLongitudes.add(requestLocation.getLongitude());
+                                    }
 
                                 }
 
@@ -68,6 +83,7 @@ public class HostActivity extends AppCompatActivity {
                             else{
 
                                 requests.add("Currently no Buddies nearby....");
+
                             }
                             arrayAdapter.notifyDataSetChanged();
                         }
@@ -117,6 +133,35 @@ public class HostActivity extends AppCompatActivity {
         requests.add("Searching for Nearby Buddies");
 
         requestList.setAdapter(arrayAdapter);
+
+
+
+        requestList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if( (Build.VERSION.SDK_INT < 23 || ContextCompat.checkSelfPermission(HostActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)){
+
+
+                    Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+                 if(requestLatitudes.size() > i && requestLongitudes.size() > i && lastKnownLocation != null) {
+
+                     Intent intent = new Intent(getApplicationContext(), HostLocationActivity.class);
+                             intent.putExtra("requestLatitude", requestLatitudes.get(i));
+                            intent.putExtra("requestLongitude",requestLongitudes.get(i));
+                            intent.putExtra("hostLatitude", lastKnownLocation.getLatitude());
+                            intent.putExtra("hostLongitude", lastKnownLocation.getLongitude());
+
+                            startActivity(intent);
+
+                 }
+
+                }
+
+            }
+        });
+
 
 
 
