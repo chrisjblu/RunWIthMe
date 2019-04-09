@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <!-- Top toolbar-->
         <RelativeLayout
             android:id="@+id/relLayout1"
@@ -27,7 +28,13 @@
             android:id="@+id/relLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/relLayout1">
+            android:layout_below="@+id/relLayout1"
+            android:background="@drawable/runcolor">
+
+
+
+
+
 
             <include layout="@layout/layout_center_viewpager" />
 
@@ -37,15 +44,15 @@
 
                 <Button
                     android:id="@+id/logoutbtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="193dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="172dp"
+                    android:layout_marginBottom="112dp"
+                    android:background="@drawable/circle_button"
                     android:text="LogOut"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
@@ -56,12 +63,45 @@
                     android:layout_marginTop="28dp"
                     android:layout_marginEnd="8dp"
                     android:gravity="center"
-                    android:textSize="24sp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="113dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="376dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/circle_button"
+                    android:text="FOLLOWERS"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.882"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="118dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="376dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/circle_button"
+                    android:text="FOLLOWING"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.115"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageView"
@@ -75,7 +115,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@color/colorPrimary" />
+                    app:srcCompat="@color/colorPrimary"
+                    android:background="@color/colorWhite"/>
 
                 <!--<Button-->
                 <!--android:id="@+id/button2"-->

@@ -52,14 +52,16 @@
 
                 <Button
                     android:id="@+id/button3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="298dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
+                    android:background="@drawable/circle_button"
                     android:onClick="buddy"
                     android:text="Run"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
@@ -77,35 +79,41 @@
                     android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.513" />
 
 
                 <TextView
                     android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="19dp"
-                    android:layout_marginStart="88dp"
+                    android:layout_width="61dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="100dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="Buddy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.392" />
+                    app:layout_constraintVertical_bias="0.512" />
 
                 <TextView
                     android:id="@+id/textView7"
-                    android:layout_width="37dp"
-                    android:layout_height="17dp"
+                    android:layout_width="65dp"
+                    android:layout_height="35dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="88dp"
+                    android:layout_marginEnd="92dp"
                     android:layout_marginBottom="8dp"
                     android:text="Host"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.389" />
+                    app:layout_constraintVertical_bias="0.511" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
