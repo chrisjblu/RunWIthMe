@@ -43,6 +43,7 @@ public class HostLocationActivity extends FragmentActivity implements OnMapReady
         Intent intent = getIntent();
 
 
+
         // Add a marker in Sydney and move the camera
         LatLng hostLocation = new LatLng(intent.getDoubleExtra("hostLatitude", 0), intent.getDoubleExtra("hostLongitude", 0));
         mMap.addMarker(new MarkerOptions().position(hostLocation).title("Host Location"));

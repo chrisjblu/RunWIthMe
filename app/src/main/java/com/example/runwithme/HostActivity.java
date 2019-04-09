@@ -140,7 +140,7 @@ public class HostActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if( (Build.VERSION.SDK_INT < 23 || ContextCompat.checkSelfPermission(HostActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)){
+                if(Build.VERSION.SDK_INT < 23 || ContextCompat.checkSelfPermission(HostActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
 
 
                     Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
@@ -152,12 +152,12 @@ public class HostActivity extends AppCompatActivity {
                             intent.putExtra("requestLongitude",requestLongitudes.get(i));
                             intent.putExtra("hostLatitude", lastKnownLocation.getLatitude());
                             intent.putExtra("hostLongitude", lastKnownLocation.getLongitude());
-
                             startActivity(intent);
 
                  }
 
                 }
+
 
             }
         });
