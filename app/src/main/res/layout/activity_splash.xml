@@ -8,13 +8,13 @@
     tools:context=".SplashActivity">
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="226dp"
-        android:layout_height="228dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="251dp"
-        android:layout_marginEnd="93dp"
-        android:layout_marginBottom="252dp"
+        android:id="@+id/imageView3"
+        android:layout_width="248dp"
+        android:layout_height="203dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="281dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
