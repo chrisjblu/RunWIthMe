@@ -45,6 +45,13 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     private static final int ACTIVITY_NUM = 4;
+
+    public void following(View view){
+        if(ParseUser.getCurrentUser() != null) {
+            Intent intent = new Intent(getApplicationContext(), FollowActivity.class);
+            startActivity(intent);
+        }
+    }
 //
 ////    public void buddy(View view){
 ////
@@ -86,6 +93,7 @@ public class ProfileActivity extends AppCompatActivity {
 //
 //
 //    }
+
 
 
 
