@@ -19,6 +19,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ChatActivity"/>
         <activity android:name=".UserListActivity"/>
+        <activity android:name=".FollowActivity"/>
         <activity android:name=".PremiumActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
