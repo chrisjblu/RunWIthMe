@@ -6,23 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ChatActivity">
 
-    <EditText
-        android:id="@+id/chatEditText"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="98dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="type"
-        app:layout_constraintEnd_toStartOf="@+id/sendChatButton"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="683dp" />
-
     <ListView
         android:id="@+id/chatListView"
         android:layout_width="395dp"
-        android:layout_height="665dp"
+        android:layout_height="671dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp" />
 
@@ -30,13 +17,24 @@
         android:id="@+id/sendChatButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
         android:layout_marginEnd="9dp"
         android:layout_marginBottom="3dp"
         android:onClick="sendChat"
         android:text="Send"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/chatEditText" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/chatEditText"
+        android:layout_width="294dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sendChatButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

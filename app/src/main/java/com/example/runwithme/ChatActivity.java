@@ -39,7 +39,7 @@ public class ChatActivity extends AppCompatActivity {
 
         public void sendChat (View view){
 
-            final EditText chatEditText = (EditText) findViewById(R.id.chatEditText);
+            final  EditText chatEditText = (EditText) findViewById(R.id.chatEditText);
             ParseObject message = new ParseObject("Message");
 
             final String messageContent = chatEditText.getText().toString(); // chatedit content dissapers, ready for a new message
@@ -57,7 +57,9 @@ public class ChatActivity extends AppCompatActivity {
                  public void done(ParseException e) {
                      if (e== null){
 
-                         messages.add(messageContent);
+                         messages.add(chatEditText.getText().toString());
+
+
 
                          arrayAdapter.notifyDataSetChanged();
                           // immendiatley displays message on the chat list once its sends
@@ -71,6 +73,7 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
         Intent intent = getIntent();
+
          activeUser = intent.getStringExtra("username");
 
         setTitle("Chat with " +activeUser);
@@ -79,9 +82,10 @@ public class ChatActivity extends AppCompatActivity {
 
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,messages);
 
-        chatListView.setAdapter(arrayAdapter); // applying the adatper to the chatlistview
+        chatListView.setAdapter(arrayAdapter);  // applying the adatper to the chatlistview
  // setting up to individual queries & combined them as a list
-        ParseQuery<ParseObject> query1 = new ParseQuery<ParseObject>("message");
+
+        ParseQuery<ParseObject> query1 = new ParseQuery<ParseObject>( "message");
 
         query1.whereEqualTo("sender", ParseUser.getCurrentUser().getUsername());
         query1.whereEqualTo("recipent", activeUser);
@@ -99,7 +103,7 @@ public class ChatActivity extends AppCompatActivity {
 
         ParseQuery<ParseObject> query = ParseQuery.or(queries);
 
-        query.orderByDescending("createdAt");
+        query.orderByAscending("createdAt");
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
