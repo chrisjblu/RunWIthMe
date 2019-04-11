@@ -39,8 +39,9 @@ public class ChatActivity extends AppCompatActivity {
 
         public void sendChat (View view){
 
-            final  EditText chatEditText = (EditText) findViewById(R.id.chatEditText);
+
             ParseObject message = new ParseObject("Message");
+            final  EditText chatEditText = (EditText) findViewById(R.id.chatEditText);
 
             final String messageContent = chatEditText.getText().toString(); // chatedit content dissapers, ready for a new message
 
@@ -49,15 +50,15 @@ public class ChatActivity extends AppCompatActivity {
              message.put("message",messageContent);
 
 
-
              chatEditText.setText("");
+
 
              message.saveInBackground(new SaveCallback() {
                  @Override
                  public void done(ParseException e) {
                      if (e== null){
 
-                         messages.add(chatEditText.getText().toString());
+                         messages.add(messageContent);
 
 
 
