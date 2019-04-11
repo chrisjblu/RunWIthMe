@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+
     public void onClick(View view){
         if(view.getId() == R.id.logoIV || view.getId() == R.id.mainLayout){
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);

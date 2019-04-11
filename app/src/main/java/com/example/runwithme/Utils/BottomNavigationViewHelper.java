@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.MenuItem;
 
+import com.example.runwithme.ChatActivity;
 import com.example.runwithme.MapsActivity;
 import com.example.runwithme.ProfileActivity;
 import com.example.runwithme.R;
+import com.example.runwithme.UserListActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -35,6 +37,8 @@ public class BottomNavigationViewHelper {
 
                     case R.id.ic_chat:
                         ///Acitivty_Num  = 1
+                        Intent intent2 = new Intent(context, UserListActivity.class);
+                        context.startActivity(intent2);
                         break;
 
                     case R.id.ic_map:
