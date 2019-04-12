@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -31,7 +32,8 @@ import java.util.List;
 public class HostActivity extends AppCompatActivity {
 
     ListView requestList;
-    ArrayList<String> requests = new ArrayList<String>();
+
+    ArrayList<String> requests = new ArrayList<>();
     ArrayAdapter arrayAdapter;
 
     LocationManager locationManager;
@@ -40,9 +42,12 @@ public class HostActivity extends AppCompatActivity {
     ArrayList<Double> requestLatitudes = new ArrayList<Double>();
     ArrayList<Double> requestLongitudes = new ArrayList<Double>();
 
+    ArrayList<String> usernames = new ArrayList<String>();
+
     public void updateListView(Location location){
             if(location != null) {
 
+                requestList = (ListView) findViewById(R.id.requestList);
 
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("Request");
 
@@ -74,6 +79,8 @@ public class HostActivity extends AppCompatActivity {
 
                                         requestLatitudes.add(requestLocation.getLatitude());
                                         requestLongitudes.add(requestLocation.getLongitude());
+
+                                        usernames.add(object.getString("username"));
                                     }
 
                                 }
@@ -138,29 +145,32 @@ public class HostActivity extends AppCompatActivity {
 
         requestList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                if(Build.VERSION.SDK_INT < 23 || ContextCompat.checkSelfPermission(HostActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+
 
 
                     Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
-                 if(requestLatitudes.size() > i && requestLongitudes.size() > i && lastKnownLocation != null) {
+                    if (requestLongitudes.size() > position && requestLongitudes.size() > position && usernames.size() > position && lastKnownLocation != null) {
 
-                     Intent intent = new Intent(getApplicationContext(), HostLocationActivity.class);
-                             intent.putExtra("requestLatitude", requestLatitudes.get(i));
-                            intent.putExtra("requestLongitude",requestLongitudes.get(i));
-                            intent.putExtra("hostLatitude", lastKnownLocation.getLatitude());
-                            intent.putExtra("hostLongitude", lastKnownLocation.getLongitude());
-                            startActivity(intent);
+                        Intent intent = new Intent(getApplicationContext(), HostLocationActivity.class);
 
-                 }
+                        intent.putExtra("requestLatitude", requestLatitudes.get(position));
+                        intent.putExtra("requestLongitude", requestLongitudes.get(position));
+                        intent.putExtra("hostLatitude", lastKnownLocation.getLatitude());
+                        intent.putExtra("hostLongitude", lastKnownLocation.getLongitude());
+                        intent.putExtra("username", usernames.get(position));
+                        startActivity(intent);
 
-                }
 
+
+
+                    }
 
             }
-        });
+        });/// Checking get location need to send
+
 
 
 

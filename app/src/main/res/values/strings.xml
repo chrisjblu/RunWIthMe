@@ -3,4 +3,5 @@
     <string name="title_activity_buddy">Map</string>
     <string name="searchforhost" />
     <string name="title_activity_buddy_location">Map</string>
+    <string name="title_activity_host_location">Map</string>
 </resources>
