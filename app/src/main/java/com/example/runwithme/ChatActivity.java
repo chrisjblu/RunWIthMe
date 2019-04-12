@@ -73,6 +73,8 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+        setTitle("Chat");
+
         Intent intent = getIntent();
 
          activeUser = intent.getStringExtra("username");

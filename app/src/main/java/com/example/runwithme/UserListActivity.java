@@ -39,7 +39,7 @@ public class UserListActivity extends AppCompatActivity {
 
 
 
-        setTitle("User List");
+        setTitle("Following");
 
         ListView userListView = (ListView) findViewById(R.id.UserListView);
 
