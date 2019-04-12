@@ -44,50 +44,52 @@
 
                 <Button
                     android:id="@+id/logoutbtn"
-                    android:layout_width="193dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="196dp"
-                    android:background="@drawable/circle_button"
+                    android:layout_width="238dp"
+                    android:layout_height="73dp"
+                    android:layout_marginStart="204dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/colorWhite"
                     android:text="LogOut"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.549"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="@+id/button2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.433" />
 
                 <TextView
                     android:id="@+id/userDisplay"
                     android:layout_width="395dp"
                     android:layout_height="44dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginEnd="8dp"
                     android:gravity="center"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="30sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
                 <Button
                     android:id="@+id/button2"
-                    android:layout_width="315dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="280dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/circle_button"
+                    android:layout_width="222dp"
+                    android:layout_height="73dp"
+
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="216dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/lightblue"
                     android:onClick="following"
                     android:text="FOLLOWING"
                     android:textSize="18sp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.612"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.434" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageView"
@@ -145,7 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="84dp"
                     android:layout_marginEnd="8dp"
                     android:text="Upload Picture"
                     android:textColor="#000000"
@@ -153,6 +155,21 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="425dp"
+                    android:layout_height="293dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="70dp"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.681"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button2"
+                    app:layout_constraintVertical_bias="0.0"></LinearLayout>
+
 
                 <!--<TextView-->
                 <!--android:id="@+id/textView6"-->
@@ -179,6 +196,8 @@
                 <!--app:layout_constraintHorizontal_bias="0.339"-->
                 <!--app:layout_constraintStart_toEndOf="@+id/userSwitch"-->
                 <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>

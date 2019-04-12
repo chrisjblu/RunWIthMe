@@ -39,94 +39,148 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
-                <TextView
-                    android:id="@+id/textview3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="420dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Pro-Version is coming soon!"
-                    android:textColor="@color/colorWhite"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.458"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textview2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Pro-Version Features:"
-                    android:textColor="@color/colorWhite"
+                <LinearLayout
+                    android:layout_width="347dp"
+                    android:layout_height="367dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="159dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="156dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Pro-Version Features:" />
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/textview4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="18dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="140dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="1.Tips and personal course"
-                    android:textColor="@color/colorWhite"
-                    android:textColorHint="@color/colorWhite"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.45"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textview2"
-                    tools:text=" 1.Tips and personal course" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/textview1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="136dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="2. Filter for choosing a company(gender, age)."
-                    android:textColor="@color/colorWhite"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.495"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="2. Filter for choosing a company(gender, age)." />
 
-                <TextView
-                    android:id="@+id/textview5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="160dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="3. Unlimited oppotunities to run with a company."
-                    android:textColor="@color/colorWhite"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.494"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textview1"
-                    tools:text="3. Unlimited oppotunities to run with a company." />
+                        <!-- Top toolbar-->
+                        <RelativeLayout
+                            android:id="@+id/relLayout6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="75dp"
-                    android:layout_height="80dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="492dp"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.468"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/logoo" />
 
+
+
+
+                        </RelativeLayout>
+
+                        <!-- Middle toolbar -->
+                        <RelativeLayout
+                            android:id="@+id/relLayout5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/relLayout6"
+                            android:background="@color/colorWhite">
+
+
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:id="@+id/textview2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="34dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="36dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:text="VERSION COMING SOON"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.497"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="PRO COMING SOON" />
+
+                                <TextView
+                                    android:id="@+id/textview4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="18dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:text="1.Tips and personal course"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/colorWhite"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textview2"
+                                    tools:text=" 1.Tips and personal course" />
+
+                                <TextView
+                                    android:id="@+id/textview1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="34dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="140dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:text="2. Filter for choosing a company(gender, age)."
+                                    android:textColor="@color/black"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.487"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="2. Filter for choosing a company(gender, age)." />
+
+                                <TextView
+                                    android:id="@+id/textview5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="37dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:text="3. Unlimited oppotunities to run with a company."
+                                    android:textColor="@color/black"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.478"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textview1"
+                                    tools:text="3. Unlimited oppotunities to run with a company." />
+
+                                <ImageView
+                                    android:id="@+id/imageView2"
+                                    android:layout_width="75dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="492dp"
+                                    android:layout_marginEnd="8dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.468"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/logoo" />
+
+                                <ImageView
+                                    android:id="@+id/imageView5"
+                                    android:layout_width="85dp"
+                                    android:layout_height="71dp"
+                                    app:srcCompat="@drawable/logo"
+                                    tools:layout_editor_absoluteX="131dp"
+                                    tools:layout_editor_absoluteY="238dp" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </RelativeLayout>
+
+
+                        <!-- Bottom Toolbar -->
+
+
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
 

@@ -24,6 +24,8 @@ public class ActivityPremium extends AppCompatActivity {
         TextView text3 = (TextView) findViewById(R.id.textview3);
         TextView text4 = (TextView) findViewById(R.id.textview4);
         TextView text5 = (TextView) findViewById(R.id.textview5);
+
+        setupBottomNavigationView();
     }
 
     ///bottom navigation view setup
