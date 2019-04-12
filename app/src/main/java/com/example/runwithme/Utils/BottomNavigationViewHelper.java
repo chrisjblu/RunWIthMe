@@ -4,13 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.MenuItem;
 
+import com.example.runwithme.ActivityPremium;
 import com.example.runwithme.ChatActivity;
 import com.example.runwithme.MapsActivity;
+import com.example.runwithme.PremiumActivity;
 import com.example.runwithme.ProfileActivity;
 import com.example.runwithme.R;
 import com.example.runwithme.UserListActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+
+import java.lang.ref.PhantomReference;
 
 import androidx.annotation.NonNull;
 
@@ -48,6 +52,8 @@ public class BottomNavigationViewHelper {
 
                     case R.id.ic_premium:
                         ///Acitivty_Num  = 3
+                        Intent intent4= new Intent(context, ActivityPremium.class); ///Acitivty_Num  = 2
+                        context.startActivity(intent4);
                         break;
 
                     case R.id.ic_profile:
