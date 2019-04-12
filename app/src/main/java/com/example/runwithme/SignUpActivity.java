@@ -34,7 +34,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public boolean onKey(View view, int i, KeyEvent keyevent) {
 
-        if(i == KeyEvent.KEYCODE_ENTER && keyevent.getAction()== keyevent.ACTION_DOWN){
+        if(i == KeyEvent.KEYCODE_ENTER && keyevent.getAction()== keyevent.ACTION_DOWN){ /// IF you press the enter button you automatically go down to next text field
             signupButton(view);
 
         }
@@ -58,9 +58,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         else{
 
             ParseUser user = new ParseUser();
-            user.setUsername(usernameTf.getText().toString());
-            user.setPassword(passwordTf.getText().toString());
+            user.setUsername(usernameTf.getText().toString()); /// sets username as what user typed in
+            user.setPassword(passwordTf.getText().toString()); /// sets password as what user typed in
 
+            // Saving in the Login signup in Parse
             user.signUpInBackground(new SignUpCallback() {
                 @Override
                 public void done(ParseException e) {
@@ -69,7 +70,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         Log.i("Signup", "Success");
                         Toast.makeText(SignUpActivity.this, "User has been Created", Toast.LENGTH_LONG).show();                   }
                     else{
-                        Toast.makeText(SignUpActivity.this,e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignUpActivity.this,e.getMessage(), Toast.LENGTH_LONG).show(); // if there is an error output the error message
                     }
 
                 }

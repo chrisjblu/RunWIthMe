@@ -24,7 +24,7 @@ public class PremiumActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+    /// Declaring all TextViews to see on premium page
         TextView text1 = (TextView) findViewById(R.id.textview1);
         TextView text2= (TextView) findViewById(R.id.textview2);
         TextView text3 = (TextView) findViewById(R.id.textview3);

@@ -21,12 +21,14 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 
 
+/// Login Page
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnKeyListener {
     EditText userTf;
     EditText passTf;
 
 
-// Chris
+
 
 
 
@@ -41,16 +43,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onKey(View view, int i, KeyEvent keyevent) {
 
-        if(i == KeyEvent.KEYCODE_ENTER && keyevent.getAction()== keyevent.ACTION_DOWN){
+        if(i == KeyEvent.KEYCODE_ENTER && keyevent.getAction()== keyevent.ACTION_DOWN){ /// IF you press the enter button you automatically go down to next
             loginButton(view);
 
         }
         return false;
     }
 
-    public void loginButton(View view){
+    public void loginButton(View view){ /// Login Onclick
 
-
+        //Declaring userTextfield and passwordtextfield
         EditText userTf = findViewById(R.id.userTf);
         EditText passTf = findViewById(R.id.passTf);
 
@@ -59,19 +61,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ///  ParseUser currentUser = ParseUser.getCurrentUser();
         ///   currentUser.logOut();
 
+        /// Logging users into Parse Server
         ParseUser.logInInBackground(userTf.getText().toString(), passTf.getText().toString(), new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
+                /// If the User exsists log into their profile
                 if (user != null) {
                     Log.i("Login", "Successfully");
                     Toast.makeText(MainActivity.this, "Logged In", Toast.LENGTH_LONG).show();
 
-                    Intent profile = new Intent(MainActivity.this, ProfileActivity.class);
+                    Intent profile = new Intent(MainActivity.this, ProfileActivity.class); // redirecting to the users profile
                     startActivity(profile);
                     finish();
 
 
                 } else {
+                    // if the user does not exsist show message saying they do not exsist; message is made through parse api
                     Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                     /// Intent register = new Intent(MainActivity.this, BuddyActivity.class);
                     ///startActivity(register);

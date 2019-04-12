@@ -24,12 +24,12 @@ public class SplashActivity extends AppCompatActivity {
                 } finally {
 
                     Intent i = new Intent(SplashActivity.this,
-                            MainActivity.class);
+                            MainActivity.class); // Once Loading is done at start of app; redirects to login activity
                     startActivity(i);
                     finish();
                 }
             }
-        };
+        }; /// Showing App Logo Before app starts
         welcomeThread.start();
     }
 }

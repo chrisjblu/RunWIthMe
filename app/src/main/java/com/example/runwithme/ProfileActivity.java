@@ -51,117 +51,16 @@ public class ProfileActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), FollowActivity.class);
             startActivity(intent);
         }
-    }
-//
-////    public void buddy(View view){
-////
-////        Intent intent = new Intent(getApplicationContext(), BuddyActivity.class);
-////        startActivity(intent); }
-//
-//    public void redirect(){
-//        if(ParseUser.getCurrentUser().get("buddyOrhost").equals("buddy")){
-//
-//            Intent intent = new Intent(getApplicationContext(), BuddyActivity.class);
-//            startActivity(intent);
-//        }
-//
-//    }
-//
-//    public void buddy(View view) {
-//
-//
-//        Switch userswitch = (Switch) findViewById(R.id.userSwitch);
-//        String userType = "buddy";
-//
-//        if (userswitch.isChecked()) {
-//            userType = "host";
-//
-//
-//        }
-//
-//        ParseUser.getCurrentUser().put("buddyOrhost", userType);
-//
-//        ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
-//            @Override
-//            public void done(ParseException e) {
-//                redirect();
-//
-//            }
-//        });
-//
-//        Toast.makeText(ProfileActivity.this, "You are Currently Running as "+userType.toString(),Toast.LENGTH_SHORT).show();
-//
-//
-//    }
+    }// Button The redirects user to following page
 
 
 
 
 
-    public void getPhoto(){
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, 1);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        Uri selectImage = data.getData();
-        if(requestCode == 1 && resultCode == RESULT_OK && data != null){
-            try{
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectImage);
-                ImageView imageView = findViewById(R.id.imageView);
-                imageView.setImageBitmap(bitmap);
-
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.PNG,100, stream);
-
-                byte[] byteArray = stream.toByteArray();
-                ParseFile file = new ParseFile("image.png", byteArray);
-
-                ParseObject object = new ParseObject("Photo");
-                object.put("image", file);
-                object.put("username",ParseUser.getCurrentUser().getUsername());
-
-                object.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        if(e==null){
-                            Toast.makeText(ProfileActivity.this, "Profile Picture Changed", Toast.LENGTH_SHORT).show();
-
-                        }else{
-                            Toast.makeText(ProfileActivity.this, "Profile Picture Has not been changed", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
 
 
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == 1){
-            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                getPhoto();
-            }
 
-        }
-    }
-
-//    public void profilePic(View view){
-//        if(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-//            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
-//        }else{
-//            getPhoto();
-//        }
-//
-//    }
 
     public void redirectMain(){
 
@@ -176,19 +75,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         ///test
 
-        TextView uploadpic = (TextView) findViewById(R.id.uploadPic);
 
-        uploadpic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-                    requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
-                }else{
-                    getPhoto();
-                }
-
-            }
-        });
 
 
         ParseUser user = ParseUser.getCurrentUser();
@@ -210,7 +97,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
             }
-        });
+        }); /// Logout Button on Profile
 
         setupBottomNavigationView();
     }
