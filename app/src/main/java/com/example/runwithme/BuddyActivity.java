@@ -159,7 +159,7 @@ public class BuddyActivity extends FragmentActivity implements OnMapReadyCallbac
         LatLng userlocation = new LatLng(location.getLatitude(), location.getLongitude());
 
         mMap.clear();
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userlocation, 12));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userlocation, 11));
         mMap.addMarker(new MarkerOptions().position(userlocation).title("Your Location").icon(BitmapDescriptorFactory.fromResource(R.drawable.smallmarker)));
 
 

@@ -21,7 +21,6 @@ public class ActivityPremium extends AppCompatActivity {
 
         TextView text1 = (TextView) findViewById(R.id.textview1);
         TextView text2= (TextView) findViewById(R.id.textview2);
-        TextView text3 = (TextView) findViewById(R.id.textview3);
         TextView text4 = (TextView) findViewById(R.id.textview4);
         TextView text5 = (TextView) findViewById(R.id.textview5);
 
