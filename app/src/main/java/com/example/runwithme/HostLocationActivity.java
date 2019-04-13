@@ -14,6 +14,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -96,7 +97,7 @@ public class HostLocationActivity extends FragmentActivity implements OnMapReady
                 ArrayList<Marker> markers = new ArrayList<>(); /// array list of markers
 
                 markers.add(mMap.addMarker(new MarkerOptions().position(hostLocation).title("Your Location"))); // array list of markers added to map
-                markers.add(mMap.addMarker(new MarkerOptions().position(requestLocation).title("Request Location")));
+                markers.add(mMap.addMarker(new MarkerOptions().position(requestLocation).title("Request Location").icon(BitmapDescriptorFactory.fromResource(R.drawable.smallmarker))));
 
 
                 LatLngBounds.Builder builder = new LatLngBounds.Builder();
