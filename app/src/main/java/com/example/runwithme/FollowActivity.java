@@ -46,7 +46,9 @@ public class FollowActivity extends AppCompatActivity {
                 if(checkedTextView.isChecked()){
 
                     Log.i("Info", "Checked");
-                    ParseUser.getCurrentUser().add("isFollowing", users.get(position));
+                    ParseUser.getCurrentUser().add("isFollowing", users.get(position)); /// Adds that user is
+                    // following another
+                    // user on parse
                 }else{
 
                     Log.i("Info", "Not Checked");
@@ -58,7 +60,7 @@ public class FollowActivity extends AppCompatActivity {
                 }
                 ParseUser.getCurrentUser().saveInBackground();
             }
-        });
+        });/// O
 
         ParseQuery<ParseUser> query = ParseUser.getQuery();
 

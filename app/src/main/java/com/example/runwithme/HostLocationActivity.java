@@ -55,7 +55,10 @@ public class HostLocationActivity extends FragmentActivity implements OnMapReady
 
                                     if(e == null){
                                         Intent directionsIntent = new Intent(android.content.Intent.ACTION_VIEW,
-                                                Uri.parse("http://maps.google.com/maps?saddr=" + intent.getDoubleExtra("hostLatitude",0)+"," + intent.getDoubleExtra("hostLongitude",0) + "&daddr=" + intent.getDoubleExtra("requestLatitude",0)+ ","+intent.getDoubleExtra("requestLongitude",0)));
+                                                Uri.parse("http://maps.google.com/maps?saddr=" + intent.getDoubleExtra(
+                                                        "hostLatitude",0)+"," + intent.getDoubleExtra("hostLongitude",0) +
+                                                        "&daddr=" + intent.getDoubleExtra("requestLatitude",0)+ ","+intent.getDoubleExtra
+                                                        ("requestLongitude",0)));
                                         startActivity(directionsIntent);
                                     }
                                 }

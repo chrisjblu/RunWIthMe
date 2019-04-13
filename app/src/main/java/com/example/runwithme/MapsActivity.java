@@ -34,11 +34,11 @@ public class MapsActivity extends AppCompatActivity {
         if(ParseUser.getCurrentUser().get("buddyOrhost").equals("buddy")){
 
             Intent intent = new Intent(getApplicationContext(), BuddyActivity.class);
-            startActivity(intent);
+            startActivity(intent);// If the switch is at buddy redirect to buddy activity
         }
         else{
             Intent intent = new Intent(getApplicationContext(), HostActivity.class);
-            startActivity(intent);
+            startActivity(intent); /// switch is at host you redirect to host acitivty
 
         }
 

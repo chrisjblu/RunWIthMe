@@ -34,7 +34,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public boolean onKey(View view, int i, KeyEvent keyevent) {
 
-        if(i == KeyEvent.KEYCODE_ENTER && keyevent.getAction()== keyevent.ACTION_DOWN){ /// IF you press the enter button you automatically go down to next text field
+        if(i == KeyEvent.KEYCODE_ENTER && keyevent.getAction()== keyevent.ACTION_DOWN){ /// IF you press the enter button you automatically go
+            // down to next text field
             signupButton(view);
 
         }
