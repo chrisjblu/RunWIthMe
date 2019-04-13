@@ -9,6 +9,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import androidx.annotation.NonNull;
@@ -158,8 +159,9 @@ public class BuddyActivity extends FragmentActivity implements OnMapReadyCallbac
         LatLng userlocation = new LatLng(location.getLatitude(), location.getLongitude());
 
         mMap.clear();
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(userlocation));
-        mMap.addMarker(new MarkerOptions().position(userlocation).title("Your Location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userlocation, 12));
+        mMap.addMarker(new MarkerOptions().position(userlocation).title("Your Location").icon(BitmapDescriptorFactory.fromResource(R.drawable.smallmarker)));
+
 
     }
     @Override
